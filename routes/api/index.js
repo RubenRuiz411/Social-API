@@ -1,3 +1,4 @@
+// index route to map the api 
 const router = require('express').Router();
 const userRoutes = require('./user-routes');
 const thoughtRoutes = require('./thoughtroutes');

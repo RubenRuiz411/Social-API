@@ -1,5 +1,5 @@
 const { User, Thought } = require('../models');
-
+// controller that has all interaction functions regarding user models and exported to be used in routes
 const userController = {
   getAllUser(req, res) {
     User.find({})
