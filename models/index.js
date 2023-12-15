@@ -3,4 +3,6 @@
 const User = require('./user');
 const Thought = require('./thought');
 
+
+//export module
 module.exports = { User, Thought };

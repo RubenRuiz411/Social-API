@@ -63,7 +63,7 @@ const thoughtController = {
     })
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: 'No thoughts found with that id!' });
+          res.status(404).json({ message: 'No thoughts found with ID' });
           return;
         }
         res.json(dbThoughtData);
@@ -75,7 +75,7 @@ const thoughtController = {
     Thought.findOneAndDelete({ _id: params.id })
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: 'No thoughts found with that id!' });
+          res.status(404).json({ message: 'No thoughts found with ID' });
           return;
         }
         return User.findOneAndUpdate(
@@ -86,7 +86,7 @@ const thoughtController = {
       })
       .then((dbUserData) => {
         if (!dbUserData) {
-          res.status(404).json({ message: 'No User found with this id!' });
+          res.status(404).json({ message: 'No User found with ID' });
           return;
         }
         res.json(dbUserData);
@@ -104,7 +104,7 @@ const thoughtController = {
       .select('-__v')
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: 'No thoughts with this ID.' });
+          res.status(404).json({ message: 'No thoughts with ID' });
           return;
         }
         res.json(dbThoughtData);
@@ -120,7 +120,7 @@ const thoughtController = {
     )
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: 'Nope!' });
+          res.status(404).json({ message: 'Nope' });
           return;
         }
         res.json(dbThoughtData);

@@ -22,7 +22,7 @@ How to use Routes with Mongoose.
 
 ## Installation
 
-Clone repository and open cloned folder in VS Code. Within the VS Terminal install NPM. Once this is done, run the server.js file. 
+Download/clone repository and open cloned folder in VS Code. Within the VS Terminal install NPM. Once this is done, run the server.js file. 
 
 -Install [NPM](https://docs.npmjs.com/cli/v6/commands/npm-install) by running "npm i -y" in the Terminal.
 
@@ -31,7 +31,7 @@ Clone repository and open cloned folder in VS Code. Within the VS Terminal insta
 
 ## Usage
 
-N/A
+N/A 
 
 ## Credits
 
