@@ -1,5 +1,7 @@
 const { User, Thought } = require('../models');
 // controller that has all interaction functions regarding thought models and exported to be used in routes
+
+
 const thoughtController = {
   getAllThoughts(req, res) {
     Thought.find({})
@@ -15,6 +17,7 @@ const thoughtController = {
         res.sendStatus(400);
       });
   },
+
 
   getThoughtById({ params }, res) {
     Thought.findOne({ _id: params.id })
@@ -36,6 +39,7 @@ const thoughtController = {
         res.sendStatus(400);
       });
   },
+
 
   createThought({ body }, res) {
     Thought.create(body)
@@ -71,6 +75,7 @@ const thoughtController = {
       .catch((err) => res.json(err));
   },
 
+
   deleteThought({ params }, res) {
     Thought.findOneAndDelete({ _id: params.id })
       .then((dbThoughtData) => {
@@ -94,6 +99,7 @@ const thoughtController = {
       .catch((err) => res.json(err));
   },
 
+
   createReaction({ params, body }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
@@ -112,6 +118,7 @@ const thoughtController = {
       .catch((err) => res.status(400).json(err));
   },
 
+
   deleteReaction({ params }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
@@ -128,5 +135,6 @@ const thoughtController = {
       .catch((err) => res.json(err));
   },
 };
+
 
 module.exports = thoughtController;

@@ -1,5 +1,6 @@
 const { User, Thought } = require('../models');
 // controller that has all interaction functions regarding user models and exported to be used in routes
+
 const userController = {
   getAllUser(req, res) {
     User.find({})
@@ -11,6 +12,7 @@ const userController = {
         res.sendStatus(400);
       });
   },
+
 
   getUserById({ params }, res) {
     User.findOne({ _id: params.id })
@@ -35,11 +37,13 @@ const userController = {
       });
   },
 
+
   createUser({ body }, res) {
     User.create(body)
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.json(err));
   },
+
 
   updateUser({ params, body }, res) {
     User.findOneAndUpdate({ _id: params.id }, body, {
@@ -56,6 +60,7 @@ const userController = {
       .catch((err) => res.json(err));
   },
 
+
   deleteUser({ params }, res) {
     Thought.deleteMany({ userId: params.id })
       .then(() => {
@@ -69,6 +74,7 @@ const userController = {
       })
       .catch((err) => res.json(err));
   },
+
 
   addFriend({ params }, res) {
     User.findOneAndUpdate(
@@ -86,6 +92,7 @@ const userController = {
       .catch((err) => res.status(400).json(err));
   },
 
+
   deleteFriend({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.userId },
@@ -102,5 +109,6 @@ const userController = {
       .catch((err) => res.status(400).json(err));
   },
 };
+
 
 module.exports = userController;
